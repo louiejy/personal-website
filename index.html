@@ -365,6 +365,27 @@
 
     .project-tag { margin-bottom: 1rem; }
 
+    .project-card.coming-soon {
+      opacity: 0.6;
+      border-style: dashed;
+      border-color: var(--rule);
+    }
+    .project-card.coming-soon:hover {
+      opacity: 0.85;
+    }
+    .coming-soon-badge {
+      display: inline-block;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.6rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--text-light);
+      border: 1px solid var(--rule);
+      padding: 0.2rem 0.55rem;
+      border-radius: 2px;
+      margin-top: 1.25rem;
+    }
+
     .project-title {
       font-family: 'Cormorant Garamond', serif;
       font-size: 1.65rem; font-weight: 500; color: var(--navy);
@@ -373,7 +394,7 @@
 
     .project-desc {
       font-size: 0.875rem; color: var(--text-muted);
-      line-height: 1.75; margin-bottom: 1.75rem;
+      line-height: 1.75; margin-bottom: 0;
     }
 
     .stack-list { display: flex; flex-wrap: wrap; gap: 0.4rem; }
@@ -384,6 +405,33 @@
       background: var(--bg-muted); color: var(--text-muted);
       border: 1px solid var(--rule);
     }
+
+    .project-footer {
+      display: flex; align-items: center; justify-content: space-between;
+      margin-top: 1.75rem;
+    }
+    .project-github-link {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.62rem; letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--text-light); text-decoration: none;
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      transition: color 0.2s ease;
+    }
+    .project-github-link:hover { color: var(--gold); }
+    .project-github-link svg { transition: transform 0.2s ease; }
+    .project-github-link:hover svg { transform: translate(2px, -2px); }
+
+    .project-live-link {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.62rem; letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--gold); text-decoration: none;
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      transition: opacity 0.2s ease;
+    }
+    .project-live-link:hover { opacity: 0.7; }
+    .project-live-link svg { transition: transform 0.2s ease; }
+    .project-live-link:hover svg { transform: translate(2px, -2px); }
+    .project-footer-links { display: inline-flex; align-items: center; gap: 1.2rem; }
 
     /* ── SKILLS ── */
     #skills { background: var(--navy); }
@@ -711,7 +759,7 @@
         <p class="label hero-label-text">Portfolio &amp; CV</p>
         <h1 class="hero-name">Justin Louie</h1>
         <p class="hero-tagline">
-          Finance Operations &middot; <em>Data Systems</em> &middot; Automation
+          Finance Operations &middot; <em>AI-Augmented Systems</em> &middot; Automation
         </p>
         <div class="hero-actions">
           <a href="#projects" class="btn-primary">
@@ -786,7 +834,7 @@
             But I've never been content to just manage process. I build systems. Whether it's <strong>VBA automation</strong> that eliminates hours of manual work, a <strong>probability engine</strong> for analyzing sports betting markets, or a <strong>paperless operations initiative</strong> that fundamentally changed how a team works — I identify inefficiency and engineer the solution.
           </p>
           <p class="about-bio reveal reveal-d2">
-            I'm drawn to the intersection of <strong>finance, data, and automation</strong> — where institutional knowledge meets modern tooling to create compounding leverage.
+            I'm drawn to the intersection of <strong>finance, data, and automation</strong> — where institutional knowledge meets modern tooling to create compounding leverage. Today, I use <strong>AI as a force multiplier</strong> — writing Python scripts, building web tools, and shipping solutions in a fraction of the time. The edge isn't in the AI itself; it's in knowing exactly what to build with it.
           </p>
         </div>
 
@@ -852,6 +900,9 @@
               <li class="reveal reveal-d3">
                 Developed SQL queries and Excel models to support data analysis, trend identification, and operational reporting across the corporate actions lifecycle.
               </li>
+              <li class="reveal reveal-d3">
+                Leverage AI tools to accelerate script development, automate research workflows, and prototype operational solutions — collapsing weeks of build time into days.
+              </li>
             </ul>
           </div>
         </div>
@@ -890,31 +941,47 @@
       <div class="projects-grid">
 
         <div class="project-card reveal" tabindex="0" role="article" aria-label="NBA Betting Probability Engine project">
-          <p class="label project-tag">Data · Sports Analytics</p>
+          <p class="label project-tag">Data · Sports Analytics · AI</p>
           <h3 class="project-title">NBA Betting Probability Engine</h3>
           <p class="project-desc">
-            A data pipeline that scrapes sportsbook lines and pulls two years of player statistics via the NBA API. Calculates historical hit frequencies for player props — over/under thresholds — to surface statistically-backed betting edges using frequency analysis and probability scoring.
+            A data pipeline that extracts lines and payouts from sportsbook sites and cross-references them against two years of player statistics via the NBA API. Outputs a CSV with probability scores for each bet — built with AI-assisted Python development to accelerate the scraping logic and statistical analysis.
           </p>
-          <div class="stack-list">
-            <span class="stack-item">Python</span>
-            <span class="stack-item">NBA API</span>
-            <span class="stack-item">Web Scraping</span>
-            <span class="stack-item">Probability</span>
-            <span class="stack-item">Statistics</span>
+          <div class="project-footer">
+            <div class="stack-list">
+              <span class="stack-item">Python</span>
+              <span class="stack-item">NBA API</span>
+              <span class="stack-item">Web Scraping</span>
+              <span class="stack-item">Probability</span>
+              <span class="stack-item">AI-Assisted Dev</span>
+            </div>
+            <a href="#" class="project-github-link" target="_blank" rel="noopener noreferrer" aria-label="View on GitHub">
+              GitHub
+              <svg width="11" height="11" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                <path d="M2 10L10 2M10 2H4M10 2v6"/>
+              </svg>
+            </a>
           </div>
         </div>
 
         <div class="project-card reveal reveal-d1" tabindex="0" role="article" aria-label="Excel Trading Journal project">
-          <p class="label project-tag">Finance · Tools</p>
-          <h3 class="project-title">Excel Trading Journal</h3>
+          <p class="label project-tag">Finance · AI Tools</p>
+          <h3 class="project-title">AI-Built Trading Journal</h3>
           <p class="project-desc">
-            A structured Excel-based system for logging trades, tracking P&amp;L, capturing entry rationale, and reviewing performance patterns over time. Built for systematic self-review and continuous improvement of trading decisions.
+            A structured Excel-based system for logging trades, tracking P&amp;L, capturing entry rationale, and reviewing performance patterns — built with AI and used in active daily trading. Designed for systematic self-review and continuous improvement of decision quality.
           </p>
-          <div class="stack-list">
-            <span class="stack-item">Excel</span>
-            <span class="stack-item">VBA</span>
-            <span class="stack-item">Data Modelling</span>
-            <span class="stack-item">P&amp;L Analysis</span>
+          <div class="project-footer">
+            <div class="stack-list">
+              <span class="stack-item">Excel</span>
+              <span class="stack-item">VBA</span>
+              <span class="stack-item">Claude</span>
+              <span class="stack-item">P&amp;L Analysis</span>
+            </div>
+            <a href="#" class="project-github-link" target="_blank" rel="noopener noreferrer" aria-label="View on GitHub">
+              GitHub
+              <svg width="11" height="11" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                <path d="M2 10L10 2M10 2H4M10 2v6"/>
+              </svg>
+            </a>
           </div>
         </div>
 
@@ -924,11 +991,19 @@
           <p class="project-desc">
             A comprehensive VBA automation library for financial operations. Includes a mass email engine that sends individualized corporate action notices to hundreds of investment advisors, plus a library of operational utilities that automate routine daily workflows.
           </p>
-          <div class="stack-list">
-            <span class="stack-item">VBA</span>
-            <span class="stack-item">Excel</span>
-            <span class="stack-item">Outlook</span>
-            <span class="stack-item">Operations</span>
+          <div class="project-footer">
+            <div class="stack-list">
+              <span class="stack-item">VBA</span>
+              <span class="stack-item">Excel</span>
+              <span class="stack-item">Outlook</span>
+              <span class="stack-item">Operations</span>
+            </div>
+            <a href="#" class="project-github-link" target="_blank" rel="noopener noreferrer" aria-label="View on GitHub">
+              GitHub
+              <svg width="11" height="11" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                <path d="M2 10L10 2M10 2H4M10 2v6"/>
+              </svg>
+            </a>
           </div>
         </div>
 
@@ -938,10 +1013,125 @@
           <p class="project-desc">
             Designed and led the full digitization of paper-based financial processes. Eliminated physical document handling, reduced annual operational costs, and established a more auditable, searchable, and scalable records system for the entire team.
           </p>
-          <div class="stack-list">
-            <span class="stack-item">Systems Design</span>
-            <span class="stack-item">Process Automation</span>
-            <span class="stack-item">Digital Transformation</span>
+          <div class="project-footer">
+            <div class="stack-list">
+              <span class="stack-item">Systems Design</span>
+              <span class="stack-item">Process Automation</span>
+              <span class="stack-item">Digital Transformation</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card reveal" tabindex="0" role="article" aria-label="EDGAR Peer Lens project">
+          <p class="label project-tag">Investment Research · Fintech · Data</p>
+          <h3 class="project-title">EDGAR Peer Lens</h3>
+          <p class="project-desc">
+            A live Streamlit app that pulls SEC EDGAR filings to benchmark competitors across revenue, margins, and balance sheet metrics — plus a real-time special situations monitor that scans for Greenblatt-style corporate events (spinoffs, mergers, bankruptcies) using RSS feeds and 8-K content reading.
+          </p>
+          <div class="project-footer">
+            <div class="stack-list">
+              <span class="stack-item">Python</span>
+              <span class="stack-item">Streamlit</span>
+              <span class="stack-item">SEC EDGAR API</span>
+              <span class="stack-item">Plotly</span>
+            </div>
+            <div class="project-footer-links">
+              <a href="https://your-edgar-app.streamlit.app" class="project-live-link" target="_blank" rel="noopener noreferrer" aria-label="Launch EDGAR Peer Lens app">
+                Launch App
+                <svg width="11" height="11" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                  <path d="M2 10L10 2M10 2H4M10 2v6"/>
+                </svg>
+              </a>
+              <a href="#" class="project-github-link" target="_blank" rel="noopener noreferrer" aria-label="View on GitHub">
+                GitHub
+                <svg width="11" height="11" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                  <path d="M2 10L10 2M10 2H4M10 2v6"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card reveal reveal-d1" tabindex="0" role="article" aria-label="AI Web Development project">
+          <p class="label project-tag">Web · AI Tools</p>
+          <h3 class="project-title">AI-Accelerated Web Development</h3>
+          <p class="project-desc">
+            Built multiple production-ready websites using AI as a coding partner — from layout and design to logic and deployment. Demonstrates how domain expertise combined with AI-assisted development allows a non-traditional developer to ship full products rapidly.
+          </p>
+          <div class="project-footer">
+            <div class="stack-list">
+              <span class="stack-item">HTML/CSS</span>
+              <span class="stack-item">JavaScript</span>
+              <span class="stack-item">Tailwind CSS</span>
+              <span class="stack-item">Claude</span>
+              <span class="stack-item">ChatGPT</span>
+            </div>
+            <a href="#" class="project-github-link" target="_blank" rel="noopener noreferrer" aria-label="View on GitHub">
+              GitHub
+              <svg width="11" height="11" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                <path d="M2 10L10 2M10 2H4M10 2v6"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="project-card reveal reveal-d2" tabindex="0" role="article" aria-label="Fractal Markets Hurst Exponent project">
+          <p class="label project-tag">Quantitative Finance · Market Structure</p>
+          <h3 class="project-title">Fractal Markets — Hurst Exponent</h3>
+          <p class="project-desc">
+            An interactive tool for measuring long memory in financial time series — inspired by Benoît Mandelbrot's <em>The Misbehavior of Markets</em>. Calculates the Hurst exponent via Rescaled Range analysis, shows rolling regime shifts over time, and visualises the R/S log-log regression that proves the result.
+          </p>
+          <div class="project-footer">
+            <div class="stack-list">
+              <span class="stack-item">Python</span>
+              <span class="stack-item">Streamlit</span>
+              <span class="stack-item">yfinance</span>
+              <span class="stack-item">NumPy</span>
+            </div>
+            <div class="project-footer-links">
+              <a href="https://your-hurst-app.streamlit.app" class="project-live-link" target="_blank" rel="noopener noreferrer" aria-label="Launch Fractal Markets app">
+                Launch App
+                <svg width="11" height="11" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                  <path d="M2 10L10 2M10 2H4M10 2v6"/>
+                </svg>
+              </a>
+              <a href="#" class="project-github-link" target="_blank" rel="noopener noreferrer" aria-label="View on GitHub">
+                GitHub
+                <svg width="11" height="11" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                  <path d="M2 10L10 2M10 2H4M10 2v6"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card reveal reveal-d3" tabindex="0" role="article" aria-label="Fractal Range Trade Trend Tail project">
+          <p class="label project-tag">Quantitative Finance · Risk</p>
+          <h3 class="project-title">Fractal Range — Trade · Trend · Tail</h3>
+          <p class="project-desc">
+            A multi-timeframe signal tool that computes Hurst-adjusted support and resistance bands across three horizons (21d / 63d / 252d). Classical models scale volatility as √T — this replaces that with T^H, widening tail risk bands for trending assets and narrowing them for mean-reverting ones.
+          </p>
+          <div class="project-footer">
+            <div class="stack-list">
+              <span class="stack-item">Python</span>
+              <span class="stack-item">Streamlit</span>
+              <span class="stack-item">yfinance</span>
+              <span class="stack-item">Plotly</span>
+            </div>
+            <div class="project-footer-links">
+              <a href="https://your-fractal-range-app.streamlit.app" class="project-live-link" target="_blank" rel="noopener noreferrer" aria-label="Launch Fractal Range app">
+                Launch App
+                <svg width="11" height="11" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                  <path d="M2 10L10 2M10 2H4M10 2v6"/>
+                </svg>
+              </a>
+              <a href="#" class="project-github-link" target="_blank" rel="noopener noreferrer" aria-label="View on GitHub">
+                GitHub
+                <svg width="11" height="11" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                  <path d="M2 10L10 2M10 2H4M10 2v6"/>
+                </svg>
+              </a>
+            </div>
           </div>
         </div>
 
@@ -992,6 +1182,9 @@
             <span class="skill-tag">API Integration</span>
             <span class="skill-tag">Process Design</span>
             <span class="skill-tag">Productivity Systems</span>
+            <span class="skill-tag">AI-Assisted Development</span>
+            <span class="skill-tag">Prompt Engineering</span>
+            <span class="skill-tag">LLM Integration</span>
           </div>
         </div>
       </div>
